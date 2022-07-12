@@ -8,7 +8,7 @@ pipeline {
         }
         stage('test ml_api') {
             steps {
-                dir("packages/ml_api") {
+                dir("packages/ml_api/") {
                 sh "tox"
                 }
                 }
