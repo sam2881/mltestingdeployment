@@ -1,9 +1,5 @@
 pipeline {
-    agent any
-    environment {
-        CUSTOM_ARGS ="--junitxml=junit.xml"
-
-    }
+    agent { docker { image 'python:3.7.2' } }
        stages {
         stage('Clone Repository') {
           steps {
@@ -16,9 +12,7 @@ pipeline {
                 sh "pip install tox"
                 sh "tox "
                 }
-                }
-            }
-        }
-
-        }
-
+          }
+		}
+	   }
+}
