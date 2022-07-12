@@ -6,9 +6,11 @@ pipeline {
             checkout scm
            }
         }
-        stage('Build Image') {
+        stage('test ml_api') {
             steps {
-                sh 'sudo docker build -t mymodel:v1'
+                dir("packages/ml_api") {
+                sh "tox"
+                }
                 }
             }
         }
