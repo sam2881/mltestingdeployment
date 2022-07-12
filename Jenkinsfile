@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    environment {
+        CUSTOM_ARGS ="--junitxml=junit.xml"
+
+    }
        stages {
         stage('Clone Repository') {
           steps {
