@@ -9,7 +9,7 @@ pipeline {
         stage('test ml_api') {
             steps {
                 dir("packages/ml_api/") {
-                sh "tox -r"
+                sh "bash tox -r"
                 }
                 }
             }
