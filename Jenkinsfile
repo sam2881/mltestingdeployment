@@ -9,7 +9,7 @@ pipeline {
         stage('test ml_api') {
             steps {
                 dir("packages/ml_api/") {
-                sh "bash tox -r"
+                sh "tox -- --override-flag"
                 }
                 }
             }
