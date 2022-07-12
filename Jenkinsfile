@@ -13,7 +13,8 @@ pipeline {
         stage('test ml_api') {
             steps {
                 dir("packages/ml_api/") {
-                sh "tox -- --override-flag "
+                sh "pip install tox"
+                sh "tox "
                 }
                 }
             }
